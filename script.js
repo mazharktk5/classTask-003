@@ -53,3 +53,14 @@ var questions = [
 
 var currentQuestionIndex = 0;
 var score = 0;
+
+function displayQuestion() {
+    var questionEl = document.getElementById('question')
+    questionEl.textContent = questions[currentQuestionIndex].question
+    document.getElementById('btn1').textContent=questions[currentQuestionIndex].option[0]
+    document.getElementById('btn2').textContent=questions[currentQuestionIndex].option[1]
+    document.getElementById('btn3').textContent=questions[currentQuestionIndex].option[2]   
+    document.getElementById('btn4').textContent=questions[currentQuestionIndex].option[3]
+}
+
+displayQuestion();
