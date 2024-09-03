@@ -95,4 +95,11 @@ function restartQuiz() {
     document.getElementById('restart-btn').style.display = "none";
     displayQuestion();
 }
-displayQuestion();
+
+function hoverEffect(element){
+    element.style.backgroundColor = "#bbb";
+}
+
+function removeHoverEffect(element) {
+    element.style.backgroundColor = "";
+}
