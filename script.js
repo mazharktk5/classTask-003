@@ -74,4 +74,15 @@ function checkAnswer(selectedOptionIndex){
     }
     
 }
+
+function nextQuestion(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        displayQuestion();
+    }else{
+        document.getElementById('result').textContent = "Game Over! Your Score Is " + score;
+        document.getElementById('next-btn').style.display = "none";
+        document.getElementById('restart-btn').style.display = "block";
+    }
+}
 displayQuestion();
