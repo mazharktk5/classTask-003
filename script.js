@@ -49,3 +49,7 @@ var questions = [
     },  
 
 ]
+
+
+var currentQuestionIndex = 0;
+var score = 0;
