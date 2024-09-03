@@ -82,8 +82,11 @@ function checkAnswer(selectedOptionIndex){
 }
 
 function nextQuestion(){
-  
-
+    document.getElementById('btn1').disabled = false;
+    document.getElementById('btn2').disabled = false;
+    document.getElementById('btn3').disabled = false;
+    document.getElementById('btn4').disabled = false;
+    
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
         displayQuestion();
