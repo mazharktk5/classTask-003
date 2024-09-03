@@ -85,4 +85,14 @@ function nextQuestion(){
         document.getElementById('restart-btn').style.display = "block";
     }
 }
+
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById('score').textContent = "Score: 0";
+    document.getElementById('result').textContent = "";
+    document.getElementById('next-btn').style.display = "block";
+    document.getElementById('restart-btn').style.display = "none";
+    displayQuestion();
+}
 displayQuestion();
