@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    class task
+    <div id="quiz-container">
+        <h1>Interactive Quiz Game</h1>
+        <p id="score">Score: 0</p>
+        <div id="main-container">
+            <p id="question"></p>
+            <button class="option" id="btn1" onclick="checkAnswer(0)" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">Option 1</button>
+            <button class="option" id="btn2" onclick="checkAnswer(1)" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">Option 2</button>
+            <button class="option" id="btn3" onclick="checkAnswer(2)" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">Option 3</button>
+            <button class="option" id="btn4" onclick="checkAnswer(3)" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">Option 4</button>
+        </div>
+        <div class="controls">
+        <button id="next-btn" class="control-btn" onclick="nextQuestion()">Next</button>
+        <button id="restart-btn" class="control-btn" onclick="restartQuiz()" style="display: none;">Play Again</button>
+    </div>
+        <p id="result"></p>
+    </div>
+   
+    <script src="script.js"></script>
 </body>
 </html>
