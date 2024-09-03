@@ -63,4 +63,15 @@ function displayQuestion() {
     document.getElementById('btn4').textContent=questions[currentQuestionIndex].option[3]
 }
 
+function checkAnswer(selectedOptionIndex){
+    if(selectedOptionIndex === questions[currentQuestionIndex].answer){
+        alert("Correct!");
+        score++;
+        document.getElementById('score').textContent = "Score: " + score;
+    }else
+    {
+        alert("Wrong! Try Again");
+    }
+    
+}
 displayQuestion();
