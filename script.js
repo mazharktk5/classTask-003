@@ -103,3 +103,22 @@ function hoverEffect(element){
 function removeHoverEffect(element) {
     element.style.backgroundColor = "";
 }
+
+
+
+document.addEventListener('keydown', function(event){
+    if(event.key === "1"){
+        checkAnswer(0);
+    }
+    else if(event.key === "2"){
+        checkAnswer(1);
+    }
+    else if(event.key === "3"){
+        checkAnswer(2);
+    }
+    else if(event.key === "4"){
+        checkAnswer(3);
+    }
+});
+displayQuestion();
+
