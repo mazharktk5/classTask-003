@@ -1,3 +1,5 @@
+
+
 var questions = [
     {
         question: 'Which country has the most islands?',
@@ -76,7 +78,7 @@ function checkAnswer(selectedOptionIndex){
         document.getElementById('score').textContent = "Score: " + score;
     }else
     {
-        alert("Wrong! Try Again");
+        alert("Wrong Answer!");
     }
     
 }
@@ -85,6 +87,7 @@ function nextQuestion(){
    
     
     currentQuestionIndex++;
+    
     if(currentQuestionIndex < questions.length){
         displayQuestion();
         document.getElementById('btn1').disabled = false;
