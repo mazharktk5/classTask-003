@@ -63,7 +63,15 @@ function displayQuestion() {
     document.getElementById('btn2').textContent=questions[currentQuestionIndex].option[1]
     document.getElementById('btn3').textContent=questions[currentQuestionIndex].option[2]   
     document.getElementById('btn4').textContent=questions[currentQuestionIndex].option[3]
+// updated code
+    document.getElementById('btn1').disabled = false;
+    document.getElementById('btn2').disabled = false;
+    document.getElementById('btn3').disabled = false;
+    document.getElementById('btn4').disabled = false;
+    document.getElementById('next-btn').disabled = true;
 }
+
+
 
 function checkAnswer(selectedOptionIndex){
     var correctAsnwer = questions[currentQuestionIndex].answer
@@ -71,7 +79,10 @@ function checkAnswer(selectedOptionIndex){
     document.getElementById('btn2').disabled = true;
     document.getElementById('btn3').disabled = true;
     document.getElementById('btn4').disabled = true;
+    document.getElementById('next-btn').disabled = false;
 
+
+    
     if(selectedOptionIndex === questions[currentQuestionIndex].answer){
         alert("Correct!");
         score++;
@@ -94,6 +105,7 @@ function nextQuestion(){
         document.getElementById('btn2').disabled = false;
         document.getElementById('btn3').disabled = false;
         document.getElementById('btn4').disabled = false;
+        document.getElementById('next-btn').disabled = true;
     }else{
         document.getElementById('result').textContent = "Game Over! Your Score Is " + score;
         document.getElementById('next-btn').style.display = "none";
@@ -135,5 +147,9 @@ document.addEventListener('keydown', function(event){
         checkAnswer(3);
     }
 });
+
+
+
+
 displayQuestion();
 
