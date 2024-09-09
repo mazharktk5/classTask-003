@@ -1,5 +1,3 @@
-
-
 var questions = [
     {
         question: 'Which country has the most islands?',
@@ -73,26 +71,47 @@ function displayQuestion() {
 
 
 
-function checkAnswer(selectedOptionIndex){
-    var correctAsnwer = questions[currentQuestionIndex].answer
+function checkAnswer(selectedOptionIndex) {
+    var correctAnswer = questions[currentQuestionIndex].answer;
+    
+    // Disable all buttons after selecting an answer
     document.getElementById('btn1').disabled = true;
     document.getElementById('btn2').disabled = true;
     document.getElementById('btn3').disabled = true;
     document.getElementById('btn4').disabled = true;
     document.getElementById('next-btn').disabled = false;
 
+    // Turn all buttons to default color
+    var buttons = ['btn1', 'btn2', 'btn3', 'btn4'];
+    buttons.forEach(function(buttonId) {
+        document.getElementById(buttonId).style.backgroundColor = "";
+    });
 
-    
-    if(selectedOptionIndex === questions[currentQuestionIndex].answer){
-        alert("Correct!");
+
+
+   
+
+    // Play sound and highlight the correct answer
+    var correctSound = document.getElementById('correct-sound');
+    var wrongSound = document.getElementById('wrong-sound');
+    if (selectedOptionIndex === correctAnswer) {
+        document.getElementById(`btn${correctAnswer + 1}`).style.backgroundColor = "green";
+        document.getElementById(`btn${correctAnswer + 1}`).textContent += " ✓";
+        correctSound.play();
         score++;
         document.getElementById('score').textContent = "Score: " + score;
-    }else
-    {
-        alert("Wrong Answer!");
+    } else {
+        document.getElementById(`btn${correctAnswer + 1}`).style.backgroundColor = "green";
+        document.getElementById(`btn${correctAnswer + 1}`).textContent += " ✓";
+        
+        document.getElementById(`btn${selectedOptionIndex + 1}`).style.backgroundColor = "red";
+        document.getElementById(`btn${selectedOptionIndex + 1}`).textContent += " ✗";
+        wrongSound.play();
     }
     
 }
+
+
 
 function nextQuestion(){
    
@@ -106,6 +125,13 @@ function nextQuestion(){
         document.getElementById('btn3').disabled = false;
         document.getElementById('btn4').disabled = false;
         document.getElementById('next-btn').disabled = true;
+
+        var buttons = ['btn1', 'btn2', 'btn3', 'btn4'];
+        buttons.forEach(function(buttonId) {
+            document.getElementById(buttonId).style.backgroundColor = "";
+        });
+    
+       
     }else{
         document.getElementById('result').textContent = "Game Over! Your Score Is " + score;
         document.getElementById('next-btn').style.display = "none";
@@ -151,5 +177,6 @@ document.addEventListener('keydown', function(event){
 
 
 
-displayQuestion();
 
+
+displayQuestion();
