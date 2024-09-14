@@ -96,7 +96,7 @@ function checkAnswer(selectedOptionIndex) {
     var wrongSound = document.getElementById('wrong-sound');
     if (selectedOptionIndex === correctAnswer) {
         document.getElementById(`btn${correctAnswer + 1}`).style.backgroundColor = "green";
-        document.getElementById(`btn${correctAnswer + 1}`).textContent += " ✓";
+        document.getElementById(`btn${correctAnswer + 1}`).textContent +=" ✓";
         correctSound.play();
         score++;
         document.getElementById('score').textContent = "Score: " + score;
